@@ -28,6 +28,10 @@ public class SolutionDisplayer : MonoBehaviour
             cardObj.MaskCard();
         }
     }
+    public void GenerateSoluce(LevelData data)
+    {
+
+    }
 
     
 }

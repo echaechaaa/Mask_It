@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject _inventoryPrefab;
     [SerializeField] private GameObject _cardSlotPrefab;
 
+    [SerializeField] private SolutionDisplayer _solutionDisplayer;
+
     private int _currentLevelID = 0;
 
     private GameObject _currentInventoryGO = null;
@@ -22,7 +24,10 @@ public class LevelManager : MonoBehaviour
 
     private List<CardUI> _levelStartingInventory;
     //Next up we could have a levelStartingShapes and levelStartingMasks if needed
-
+    private void Awake()
+    {
+        
+    }
     private void Start()
     {
         InitLevel(1); //Start at level 1
@@ -35,8 +40,8 @@ public class LevelManager : MonoBehaviour
         {
             ClearLevel();
         }
-
         LevelData levelData = Resources.Load<LevelData>($"Data/Level/SO_Level{levelID}");
+        _solutionDisplayer.GenerateSoluce(levelData);
         if (levelData == null)
         {
             Debug.LogError($"Level data for level {levelID} not found!");

@@ -1345,6 +1345,10 @@ PrefabInstance:
       propertyPath: _canvaTransform
       value: 
       objectReference: {fileID: 1961494835}
+    - target: {fileID: 3125402385310699848, guid: e6a87c587c3c9f24f8491faf8a5aa43c, type: 3}
+      propertyPath: _solutionDisplayer
+      value: 
+      objectReference: {fileID: 47526294}
     - target: {fileID: 5674041362322079444, guid: e6a87c587c3c9f24f8491faf8a5aa43c, type: 3}
       propertyPath: m_Name
       value: LevelManager
