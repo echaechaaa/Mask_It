@@ -19,6 +19,7 @@ public class CardDisplayer : MonoBehaviour
         RemoveCard(cardUI);
 
         Card cardObj = Instantiate(cardUI.Card, transform);
+        cardObj.transform.rotation = cardUI.transform.rotation;
         cardObj.transform.localPosition = Vector3.zero;
         cardObj.transform.localScale = Vector3.one * cardScale;
 
