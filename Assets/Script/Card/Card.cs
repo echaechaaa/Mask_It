@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    private CardElement[] _cardElements;
+    [HideInInspector] public CardElement[] CardElements;
 
     [EasyButtons.Button]
     public void MaskCard()
     {
-        _cardElements = GetComponentsInChildren<CardElement>();
-        foreach (var card in _cardElements)
+        CardElements = GetComponentsInChildren<CardElement>();
+        foreach (var card in CardElements)
         {
             card.Mask.enabled = true;
             card.SpriteRenderer.enabled = false;
@@ -21,8 +21,8 @@ public class Card : MonoBehaviour
     [EasyButtons.Button]
     public void Showcard()
     {
-        _cardElements = GetComponentsInChildren<CardElement>();
-        foreach (var card in _cardElements)
+        CardElements = GetComponentsInChildren<CardElement>();
+        foreach (var card in CardElements)
         {
             card.Mask.enabled = false;
             card.SpriteRenderer.enabled = true;
