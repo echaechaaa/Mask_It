@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &373717978866998909
+--- !u!1001 &1625336292269472659
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 265000064261355026, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 265000064261355026, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 265000064261355026, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.08999424
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 265000064261355026, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,49 +48,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1253657631401552534, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
-      propertyPath: _cardElements.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1253657631401552534, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
-      propertyPath: '_cardElements.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1397332053413988762, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-    - target: {fileID: 1397332053413988762, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1429603569393168144, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-    - target: {fileID: 1429603569393168144, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5082900576864014053, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_Name
-      value: Card square Variant
+      value: Card Display Round
       objectReference: {fileID: 0}
-    - target: {fileID: 8089281180945051223, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
-      propertyPath: Mask
-      value: 
-      objectReference: {fileID: 1606629054873163751}
-    - target: {fileID: 8401330103741743927, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
---- !u!331 &1606629054873163751 stripped
-SpriteMask:
-  m_CorrespondingSourceObject: {fileID: 1397332053413988762, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
-  m_PrefabInstance: {fileID: 373717978866998909}
-  m_PrefabAsset: {fileID: 0}

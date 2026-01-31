@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 265000064261355026, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.79414535
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 265000064261355026, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1904159
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 265000064261355026, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.08999424
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 265000064261355026, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,7 +50,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5082900576864014053, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_Name
-      value: Card Variant
+      value: Card Display Round Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
