@@ -10,6 +10,8 @@ public class LevelData : ScriptableObject
     public List <Card> startingInventory;
 
     //Solution display and mask
+
+    [Header("Solution Data")]
     public List<Card> solutionShapes;
     public List <Card> solutionMasks;
 }
