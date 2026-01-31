@@ -4,31 +4,70 @@ using UnityEngine;
 
 public class CardDisplayer : MonoBehaviour
 {
+    public static CardDisplayer Instance;
     List<Card> _displayedCards; 
     List<Card> _maskedCards;
     public float cardScale;
     private void Awake()
     {
+        Instance = this;
         _displayedCards = new List<Card>();
         _maskedCards = new List<Card>();
     }
-    public void AddCardToDisplay(Card card)
+    public void AddCardToDisplay(CardUI cardUI)
     {
-        Card cardObj = Instantiate(card);
-        cardObj.transform.position = this.transform.position;
+        RemoveCard(cardUI);
+
+        Card cardObj = Instantiate(cardUI.Card, transform);
+        cardObj.transform.localPosition = Vector3.zero;
         cardObj.transform.localScale = Vector3.one * cardScale;
-        cardObj.transform.parent = this.transform;
+
+        cardObj.PrefabSource = cardUI.Card;
         cardObj.Showcard();
-        _displayedCards.Add(card);
+
+        cardUI.Cardobj = cardObj.gameObject;
+        _displayedCards.Add(cardObj); 
     }
 
-    public void AddCardToMask(Card card)
+
+    public void AddCardToMask(CardUI cardUI)
     {
-        Card cardObj = Instantiate(card);
-        cardObj.transform.position = this.transform.position;
+        RemoveCard(cardUI);
+
+        Card cardObj = Instantiate(cardUI.Card, transform);
+        cardObj.transform.localPosition = Vector3.zero;
         cardObj.transform.localScale = Vector3.one * cardScale;
-        cardObj.transform.parent = this.transform;
+
+        cardObj.PrefabSource = cardUI.Card;
         cardObj.MaskCard();
-        _maskedCards.Add(card);
+
+        cardUI.Cardobj = cardObj.gameObject;
+        _maskedCards.Add(cardObj); 
     }
+
+    public void RemoveCard(CardUI cardUI)
+    {
+        Card found = _displayedCards
+            .Find(c => c.PrefabSource == cardUI.Card);
+
+        if (found != null)
+        {
+            _displayedCards.Remove(found);
+            Debug.Log("Find display remove");
+
+            Destroy(found.gameObject);
+            return;
+        }
+
+        found = _maskedCards
+            .Find(c => c.PrefabSource == cardUI.Card);
+
+        if (found != null)
+        {
+            _maskedCards.Remove(found);
+            Debug.Log("Find Mask remove");
+            Destroy(found.gameObject);
+        }
+    }
+
 }

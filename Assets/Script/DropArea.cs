@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+public enum DropType{
+    mask,
+    display,
+    inventory
+}
 public class DropArea : MonoBehaviour, IDropHandler
 {
     public UnityEvent<Card> OnCardDropped;
+    public DropType dropType;
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
@@ -14,6 +20,18 @@ public class DropArea : MonoBehaviour, IDropHandler
             droppedCard.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             
             OnCardDropped.Invoke(GetComponentInChildren<CardUI>().Card);
+            switch (dropType)
+            {
+                case DropType.mask:
+                    CardDisplayer.Instance.AddCardToMask(GetComponentInChildren<CardUI>());
+                    break;
+                case DropType.display:
+                    CardDisplayer.Instance.AddCardToDisplay(GetComponentInChildren<CardUI>());
+                    break;
+                case DropType.inventory:
+                    CardDisplayer.Instance.RemoveCard(GetComponentInChildren<CardUI>());
+                    break;
+            }
         }
     }
 }

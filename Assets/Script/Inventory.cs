@@ -3,25 +3,18 @@ using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour
 {
-    private List<Card> _inventoryCards;
+    private List<Card> _currentInventory;
+    public List<Card> CurrentInventory
+    {
+        get => _currentInventory;
+        set
+        {
+            _currentInventory = value;
+        }
+    }
 
     private void Start()
     {
-        _inventoryCards = new List<Card>();
-    }
-
-    public void AddCard(Card card)
-    {
-        _inventoryCards.Add(card);
-    }
-
-    public void RemoveCard(Card card)
-    {
-        _inventoryCards.Remove(card);
-    }
-
-    public List<Card> GetInventoryCards()
-    {
-        return _inventoryCards;
+        _currentInventory = new List<Card>();
     }
 }

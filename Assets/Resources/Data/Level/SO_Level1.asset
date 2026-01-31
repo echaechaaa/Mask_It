@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98efc59202d2b9f4bbc5c696e723b52c, type: 3}
   m_Name: SO_Level1
   m_EditorClassIdentifier: 
-  levelID: 0
   SideSlotsCount: 3
-  startingInventory: []
+  startingInventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   solutionShapes: []
   solutionMasks: []
