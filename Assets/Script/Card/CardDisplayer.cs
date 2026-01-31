@@ -6,6 +6,7 @@ public class CardDisplayer : MonoBehaviour
 {
     List<Card> _displayedCards; 
     List<Card> _maskedCards;
+    public float cardScale;
     private void Awake()
     {
         _displayedCards = new List<Card>();
@@ -15,6 +16,7 @@ public class CardDisplayer : MonoBehaviour
     {
         Card cardObj = Instantiate(card);
         cardObj.transform.position = this.transform.position;
+        cardObj.transform.localScale = Vector3.one * cardScale;
         cardObj.transform.parent = this.transform;
         cardObj.Showcard();
         _displayedCards.Add(card);
@@ -24,6 +26,7 @@ public class CardDisplayer : MonoBehaviour
     {
         Card cardObj = Instantiate(card);
         cardObj.transform.position = this.transform.position;
+        cardObj.transform.localScale = Vector3.one * cardScale;
         cardObj.transform.parent = this.transform;
         cardObj.MaskCard();
         _maskedCards.Add(card);

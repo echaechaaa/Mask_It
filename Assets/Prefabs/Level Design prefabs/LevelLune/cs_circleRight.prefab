@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1625336292269472659
+--- !u!1001 &3699867938546626419
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -48,17 +48,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1397332053413988762, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+    - target: {fileID: 1429603569393168144, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
     - target: {fileID: 5082900576864014053, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_Name
-      value: Card Display Round
+      value: CirlcleRightDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778993727749680470, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

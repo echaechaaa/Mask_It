@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1918029221566922893
+--- !u!1001 &8916491530933673977
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,14 +11,14 @@ PrefabInstance:
     - target: {fileID: 866174817815443832, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: Card
       value: 
-      objectReference: {fileID: 2030354880724641655, guid: 88fc099755d1ee64fa8a2bcf7e776738, type: 3}
+      objectReference: {fileID: 2467252074992633317, guid: 1d3ed1d4e1658ab4cbf3167148a86154, type: 3}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_AnchorMax.x
@@ -38,22 +38,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
-      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
@@ -86,11 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -263
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -106,12 +94,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1679357655653510722, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_Name
-      value: CardDragAndDropTriangle
+      value: cdd_circleLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678748884085070757, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678748884085070757, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678748884085070757, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7978514858894704380, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+      objectReference: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
