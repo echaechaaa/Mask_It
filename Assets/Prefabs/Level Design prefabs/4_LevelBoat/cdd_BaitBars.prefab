@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 866174817815443832, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: Card
       value: 
-      objectReference: {fileID: 2467252074992633317, guid: 0ed9530db56d5ab448e3be21ce16a40c, type: 3}
+      objectReference: {fileID: 2467252074992633317, guid: 5a30dbfbdce85d644b170007fe75985c, type: 3}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -94,15 +94,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1679357655653510722, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_Name
-      value: cdd_triangleBoat
+      value: cdd_BaitBars
       objectReference: {fileID: 0}
     - target: {fileID: 6678748884085070757, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.664635
+      value: 0.948614
       objectReference: {fileID: 0}
     - target: {fileID: 6678748884085070757, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.664635
+      value: 0.716021
       objectReference: {fileID: 0}
     - target: {fileID: 6678748884085070757, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_LocalScale.x
@@ -118,16 +118,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6678748884085070757, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.16768
+      value: 0.095
       objectReference: {fileID: 0}
     - target: {fileID: 6678748884085070757, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.145
+      value: 0.095
       objectReference: {fileID: 0}
     - target: {fileID: 7978514858894704380, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7833400391275449933, guid: 054a278bb4d0cdf49a48bab0a767f116, type: 3}
+      objectReference: {fileID: -5362920238792082130, guid: 428b00e8dc0075848a6860eeffeb1c4b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

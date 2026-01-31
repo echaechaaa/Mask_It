@@ -4,12 +4,17 @@ using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private Transform _canvaTransform; //To put UI Elements under the canvas
+    [Header("Level List")]
+    [SerializeField] private List<LevelData> _levels;
 
+    [Header("References and Prefabs")]
+    [SerializeField] private Transform _canvaTransform; //To put UI Elements under the canvas
     [SerializeField] private GameObject _shapesLayoutPrefab;
     [SerializeField] private GameObject _masksLayoutPrefab;
     [SerializeField] private GameObject _inventoryPrefab;
     [SerializeField] private GameObject _cardSlotPrefab;
+
+    private int _currentLevelID = 0;
 
     private GameObject _currentInventoryGO = null;
     private GameObject _currentShapesLayoutGO = null;
@@ -18,10 +23,19 @@ public class LevelManager : MonoBehaviour
     private List<CardUI> _levelStartingInventory;
     //Next up we could have a levelStartingShapes and levelStartingMasks if needed
 
+    private void Start()
+    {
+        InitLevel(1); //Start at level 1
+    }
 
     [EasyButtons.Button]
     public void InitLevel(int levelID)
     {
+        if(_currentLevelID != 0)
+        {
+            ClearLevel();
+        }
+
         LevelData levelData = Resources.Load<LevelData>($"Data/Level/SO_Level{levelID}");
         if (levelData == null)
         {
@@ -30,7 +44,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            if(_canvaTransform != null)
+            if (_canvaTransform != null)
             {
                 //Instantiate UI
                 _currentInventoryGO = Instantiate(_inventoryPrefab, _canvaTransform);
@@ -38,6 +52,7 @@ public class LevelManager : MonoBehaviour
                 _currentMasksLayoutGO = Instantiate(_masksLayoutPrefab, _canvaTransform);
 
                 //Load level starting data
+                _currentLevelID = levelID;
                 _levelStartingInventory = new List<CardUI>(levelData.startingInventory);
 
                 ////Initialize Data
@@ -52,7 +67,7 @@ public class LevelManager : MonoBehaviour
                     card.GetComponent<DragAndDrop>()._lastDroppedArea = slot.GetComponent<DropArea>();
                 }
 
-                for(int i = 0; i < levelData.SideSlotsCount; i++)
+                for (int i = 0; i < levelData.SideSlotsCount; i++)
                 {
                     GameObject slotShape = Instantiate(_cardSlotPrefab, _currentShapesLayoutGO.transform);
                     slotShape.GetComponent<DropArea>().dropType = DropType.display;
@@ -63,6 +78,37 @@ public class LevelManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    [EasyButtons.Button]
+    public void ClearLevel()
+    {
+        if (_currentInventoryGO != null)
+        {
+            Destroy(_currentInventoryGO);
+        }
+        if (_currentShapesLayoutGO != null)
+        {
+            Destroy(_currentShapesLayoutGO);
+        }
+        if (_currentMasksLayoutGO != null)
+        {
+            Destroy(_currentMasksLayoutGO);
+        }
+    }
+
+    [EasyButtons.Button]
+    public void GoToPreviousLevel()
+    {
+        if (_currentLevelID > 1)
+        { InitLevel(_currentLevelID--); }
+    }
+
+    [EasyButtons.Button]
+    public void GoToNextLevel()
+    {
+        if (_currentLevelID < _levels.Count)
+        { InitLevel(_currentLevelID++); }
     }
 }
 
