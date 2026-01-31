@@ -1,11 +1,10 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
     [Header("Level List")]
-    [SerializeField] private List<LevelData> _levels;
+    [SerializeField] private List<LevelData> _levelsInOrder;
 
     [Header("References and Prefabs")]
     [SerializeField] private Transform _canvaTransform; //To put UI Elements under the canvas
@@ -24,27 +23,25 @@ public class LevelManager : MonoBehaviour
 
     private List<CardUI> _levelStartingInventory;
     //Next up we could have a levelStartingShapes and levelStartingMasks if needed
-    private void Awake()
-    {
-        
-    }
     private void Start()
     {
-        InitLevel(1); //Start at level 1
+        _currentLevelID = 0;
+        InitLevel(); //Start at level 1
     }
 
     [EasyButtons.Button]
-    public void InitLevel(int levelID)
+    public void InitLevel()
     {
-        if(_currentLevelID != 0)
+        if (_currentLevelID != 0)
         {
             ClearLevel();
         }
-        LevelData levelData = Resources.Load<LevelData>($"Data/Level/SO_Level{levelID}");
-        _solutionDisplayer.GenerateSoluce(levelData);
-        if (levelData == null)
+        LevelData currentLevelData = _levelsInOrder[_currentLevelID];
+
+        _solutionDisplayer.GenerateSoluce(currentLevelData);
+        if (currentLevelData == null)
         {
-            Debug.LogError($"Level data for level {levelID} not found!");
+            Debug.LogError($"Level data for level {_currentLevelID} not found!");
             return;
         }
         else
@@ -56,9 +53,7 @@ public class LevelManager : MonoBehaviour
                 _currentShapesLayoutGO = Instantiate(_shapesLayoutPrefab, _canvaTransform);
                 _currentMasksLayoutGO = Instantiate(_masksLayoutPrefab, _canvaTransform);
 
-                //Load level starting data
-                _currentLevelID = levelID;
-                _levelStartingInventory = new List<CardUI>(levelData.startingInventory);
+                _levelStartingInventory = new List<CardUI>(currentLevelData.startingInventory);
 
                 ////Initialize Data
                 foreach (CardUI cardUI in _levelStartingInventory)
@@ -72,7 +67,7 @@ public class LevelManager : MonoBehaviour
                     card.GetComponent<DragAndDrop>()._lastDroppedArea = slot.GetComponent<DropArea>();
                 }
 
-                for (int i = 0; i < levelData.SideSlotsCount; i++)
+                for (int i = 0; i < currentLevelData.SideSlotsCount; i++)
                 {
                     GameObject slotShape = Instantiate(_cardSlotPrefab, _currentShapesLayoutGO.transform);
                     slotShape.GetComponent<DropArea>().dropType = DropType.display;
@@ -106,14 +101,22 @@ public class LevelManager : MonoBehaviour
     public void GoToPreviousLevel()
     {
         if (_currentLevelID > 1)
-        { InitLevel(_currentLevelID--); }
+        {
+            _currentLevelID -=1;
+            _currentLevelID %= _levelsInOrder.Count;
+            InitLevel();
+        }
     }
 
     [EasyButtons.Button]
     public void GoToNextLevel()
     {
-        if (_currentLevelID < _levels.Count)
-        { InitLevel(_currentLevelID++); }
+        if (_currentLevelID < _levelsInOrder.Count)
+        {
+            _currentLevelID +=1;
+            _currentLevelID %= _levelsInOrder.Count;
+            InitLevel();
+        }
     }
 }
 
