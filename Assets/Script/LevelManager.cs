@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private Canvas _canvas;
+    [SerializeField] private Transform _canvaTransform; //To put inventory under the canvas
     [SerializeField] private GameObject _emptyInventoryPrefab;
  
     private List<Card> _levelStartingInventory;
@@ -21,8 +21,11 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Instantiate(_emptyInventoryPrefab);
-            _levelStartingInventory = new List<Card>(levelData.startingInventory);
+            if(_canvaTransform != null)
+            {
+                Instantiate(_emptyInventoryPrefab, _canvaTransform);
+                _levelStartingInventory = new List<Card>(levelData.startingInventory);
+            }
         }
     }
 }
