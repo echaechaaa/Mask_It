@@ -6,6 +6,9 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     [HideInInspector] public CardElement[] CardElements;
+    [HideInInspector] public CardUI CardUI;
+
+    [HideInInspector] public Card PrefabSource;
 
     //[EasyButtons.Button]
     public void MaskCard()

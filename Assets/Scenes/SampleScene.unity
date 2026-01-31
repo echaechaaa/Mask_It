@@ -501,8 +501,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 603600709}
     m_Modifications:
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: dropType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -631,8 +635,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 603600709}
     m_Modifications:
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: dropType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -761,8 +769,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1024501958}
     m_Modifications:
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
-      propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: dropType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1592,8 +1604,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 603600709}
     m_Modifications:
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: dropType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1722,8 +1738,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1024501958}
     m_Modifications:
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
-      propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: dropType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1852,8 +1872,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1024501958}
     m_Modifications:
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
-      propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: dropType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: OnCardDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

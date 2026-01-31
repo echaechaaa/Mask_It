@@ -74,6 +74,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4589295468436198321}
     m_Modifications:
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: dropType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5186909596704977686, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: m_Name
       value: CardSlot (2)
@@ -176,6 +180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4589295468436198321}
     m_Modifications:
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: dropType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5186909596704977686, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: m_Name
       value: CardSlot (1)
@@ -278,6 +286,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4589295468436198321}
     m_Modifications:
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: dropType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5186909596704977686, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: m_Name
       value: CardSlot (3)
@@ -380,6 +392,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4589295468436198321}
     m_Modifications:
+    - target: {fileID: 4576245293237716530, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+      propertyPath: dropType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5186909596704977686, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
       propertyPath: m_Name
       value: CardSlot
