@@ -47,7 +47,9 @@ public class LevelManager : MonoBehaviour
                     GameObject slot = Instantiate(_cardSlotPrefab, _currentInventoryGO.transform);
                     slot.GetComponent<DropArea>().dropType = DropType.inventory;
                     CardUI card = Instantiate(cardUI, slot.transform);
-                    //card.GetComponent<DropArea>()
+                    card.transform.SetParent(slot.transform);
+                    card.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                    card.GetComponent<DragAndDrop>()._lastDroppedArea = slot.GetComponent<DropArea>();
                 }
 
                 for(int i = 0; i < levelData.SideSlotsCount; i++)

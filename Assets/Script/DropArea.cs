@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-public enum DropType{
+public enum DropType
+{
     mask,
     display,
     inventory
@@ -12,6 +14,11 @@ public class DropArea : MonoBehaviour, IDropHandler
     public DropType dropType;
     public void OnDrop(PointerEventData eventData)
     {
+        if (IsDropAllowed() == false)
+        {
+            return;
+        }
+
         if (eventData.pointerDrag != null)
         {
             // "Snap" the dropped item to the center of the drop area
@@ -36,5 +43,18 @@ public class DropArea : MonoBehaviour, IDropHandler
                     break;
             }
         }
+    }
+
+    public bool IsDropAllowed() //To avoid stacking
+    {
+        Transform[] children = GetComponentsInChildren<Transform>();
+        foreach (Transform child in children)
+        {
+            if (child.TryGetComponent<DragAndDrop>(out DragAndDrop d))
+            {
+                return false; // There is at least one child, so drop is not allowed
+            }
+        }
+        return true; // No children found, drop is allowed
     }
 }
