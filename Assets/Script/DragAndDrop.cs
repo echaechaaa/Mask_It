@@ -25,7 +25,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         if (_canvasGroup != null)
         {
             _canvasGroup.blocksRaycasts = false;
-            //Do something when dragging here
+            //Do something when dragging here like animation, sound event etc
             _canvasGroup.alpha = 0.6f;
         }
     }
@@ -48,6 +48,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             {
                 if (Go.TryGetComponent<DropArea>(out DropArea dropArea))
                 {
+                    if (IsDropAllowed() == false) //doesnt work properly yet needs to be called elsewhere
+                    {
+                        break;
+                    }
+
                     //Set parent to last dropped area if dropped on a drop area
                     gameObject.transform.SetParent(dropArea.transform);
                     isDroppedOnDropArea = true;
@@ -64,5 +69,17 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
                 }
             }
         }
+    }
+    public bool IsDropAllowed() //To avoid stacking
+    {
+        Transform[] children = GetComponentsInChildren<Transform>();
+        foreach (Transform child in children)
+        {
+            if (child.TryGetComponent<DragAndDrop>(out DragAndDrop d))
+            {
+                return false; // There is at least one child, so drop is not allowed
+            }
+        }
+        return true; // No children found, drop is allowed
     }
 }

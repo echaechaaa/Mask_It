@@ -58,27 +58,27 @@ public class LevelManager : MonoBehaviour
                 {
                     //Add cards to inventory
                     GameObject slot = Instantiate(_cardSlotPrefab, _currentInventoryGO.transform);
-                    slot.GetComponent<DropArea>().dropType = DropType.inventory;
+                    slot.GetComponent<DropArea>().dropType = DropType.INVENTORY;
+
                     CardUI card = Instantiate(cardUI, slot.transform);
                     card.transform.SetParent(slot.transform);
                     card.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                    card.GetComponent<DragAndDrop>()._lastDroppedArea = slot.GetComponent<DropArea>();
+
+                    card.GetComponent<DragAndDrop>()._lastDroppedArea = slot.GetComponent<DropArea>(); //Probs doesnt work
                 }
 
                 for (int i = 0; i < currentLevelData.SideSlotsCount; i++)
                 {
                     GameObject slotShape = Instantiate(_cardSlotPrefab, _currentShapesLayoutGO.transform);
-                    slotShape.GetComponent<DropArea>().dropType = DropType.display;
+                    slotShape.GetComponent<DropArea>().dropType = DropType.DISPLAY;
 
                     GameObject slotMask = Instantiate(_cardSlotPrefab, _currentMasksLayoutGO.transform);
-                    slotMask.GetComponent<DropArea>().dropType = DropType.mask;
+                    slotMask.GetComponent<DropArea>().dropType = DropType.MASK;
 
                 }
             }
         }
     }
-
-    [EasyButtons.Button]
     public void ClearLevel()
     {
         if (_currentInventoryGO != null)

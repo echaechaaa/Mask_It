@@ -1,60 +1,44 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 public enum DropType
 {
-    mask,
-    display,
-    inventory
+    MASK,
+    DISPLAY,
+    INVENTORY
 }
 public class DropArea : MonoBehaviour, IDropHandler
 {
     public UnityEvent<Card> OnCardDropped;
-    public DropType dropType;
+    public DropType dropType; //Type of object being dropped ?
     public void OnDrop(PointerEventData eventData)
     {
-        if (IsDropAllowed() == false)
-        {
-            return;
-        }
-
-        if (eventData.pointerDrag != null)
+        if (eventData.pointerDrag != null) //if something is being dropped
         {
             // "Snap" the dropped item to the center of the drop area
-            GameObject droppedCard = eventData.pointerDrag;
-            droppedCard.transform.SetParent(gameObject.transform);
-            droppedCard.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-            Card cardDropped = GetComponentInChildren<CardUI>().Card;
-            OnCardDropped.Invoke(cardDropped);
+            GameObject droppedGO = eventData.pointerDrag;
+            droppedGO.transform.SetParent(gameObject.transform);
+            droppedGO.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+            Card droppedCard = GetComponentInChildren<CardUI>().Card;
+            OnCardDropped.Invoke(droppedCard);
             GetComponentInChildren<DragAndDrop>()._lastDroppedArea = this;
 
-
+            //Display the card according to drop area type
             switch (dropType)
             {
-                case DropType.mask:
+                case DropType.MASK:
                     CardDisplayer.Instance.AddCardToMask(GetComponentInChildren<CardUI>());
                     break;
-                case DropType.display:
+                case DropType.DISPLAY:
                     CardDisplayer.Instance.AddCardToDisplay(GetComponentInChildren<CardUI>());
                     break;
-                case DropType.inventory:
+                case DropType.INVENTORY:
                     CardDisplayer.Instance.RemoveCard(GetComponentInChildren<CardUI>());
                     break;
             }
         }
     }
 
-    public bool IsDropAllowed() //To avoid stacking
-    {
-        Transform[] children = GetComponentsInChildren<Transform>();
-        foreach (Transform child in children)
-        {
-            if (child.TryGetComponent<DragAndDrop>(out DragAndDrop d))
-            {
-                return false; // There is at least one child, so drop is not allowed
-            }
-        }
-        return true; // No children found, drop is allowed
-    }
+   
 }
