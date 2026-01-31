@@ -5,7 +5,7 @@ public class CardElement : MonoBehaviour
     public SpriteRenderer SpriteRenderer;
     public SpriteMask Mask;
 
-    [EasyButtons.Button]
+    //[EasyButtons.Button]
     public void SetupMask()
     {
         SpriteMask mask;

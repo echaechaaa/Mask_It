@@ -7,9 +7,11 @@ public class Card : MonoBehaviour
 {
     [HideInInspector] public CardElement[] CardElements;
 
-    [EasyButtons.Button]
+    //[EasyButtons.Button]
     public void MaskCard()
     {
+        Debug.Log("MaskCard");
+
         CardElements = GetComponentsInChildren<CardElement>();
         foreach (var card in CardElements)
         {
@@ -18,9 +20,10 @@ public class Card : MonoBehaviour
         }
     }
     
-    [EasyButtons.Button]
+    //[EasyButtons.Button]
     public void Showcard()
     {
+        Debug.Log("ShowCard");
         CardElements = GetComponentsInChildren<CardElement>();
         foreach (var card in CardElements)
         {
