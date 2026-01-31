@@ -32,10 +32,8 @@ public class LevelManager : MonoBehaviour
     [EasyButtons.Button]
     public void InitLevel()
     {
-        if (_currentLevelID != 0)
-        {
-            ClearLevel();
-        }
+        ClearLevel();
+
         LevelData currentLevelData = _levelsInOrder[_currentLevelID];
 
         _solutionDisplayer.GenerateSoluce(currentLevelData);
@@ -97,26 +95,20 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    [EasyButtons.Button]
+    /*[EasyButtons.Button]
     public void GoToPreviousLevel()
     {
-        if (_currentLevelID > 1)
-        {
-            _currentLevelID -=1;
-            _currentLevelID %= _levelsInOrder.Count;
-            InitLevel();
-        }
-    }
+        _currentLevelID -=1;
+        _currentLevelID %= _levelsInOrder.Count;
+        InitLevel();
+    }*/
 
     [EasyButtons.Button]
     public void GoToNextLevel()
     {
-        if (_currentLevelID < _levelsInOrder.Count)
-        {
-            _currentLevelID +=1;
-            _currentLevelID %= _levelsInOrder.Count;
-            InitLevel();
-        }
+        _currentLevelID +=1;
+        _currentLevelID %= _levelsInOrder.Count;
+        InitLevel();
     }
 }
 
