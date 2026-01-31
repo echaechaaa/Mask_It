@@ -7,9 +7,23 @@ public class SolutionDisplayer : MonoBehaviour
     public float CardSize;
     public List<CardUI> DisplayedCards;
     public List<CardUI> MaskedCards;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    List<GameObject> soluce;
+    public void GenerateSoluce(LevelData data)
     {
+        if(soluce != null)
+        {
+            foreach (GameObject gameObj in soluce)
+            {
+                Destroy(gameObj);
+                Debug.Log("destroy");
+            }
+        }
+        
+        DisplayedCards = data.solutionShapes;
+        MaskedCards = data.solutionMasks;
+
+        soluce = new();
         foreach (CardUI card in DisplayedCards)
         {
             Card cardObj = Instantiate(card.Card, transform);
@@ -17,6 +31,7 @@ public class SolutionDisplayer : MonoBehaviour
             cardObj.transform.localScale = Vector3.one * CardSize;
 
             cardObj.Showcard();
+            soluce.Add(cardObj.gameObject);
         }
 
         foreach (CardUI card in MaskedCards)
@@ -26,11 +41,9 @@ public class SolutionDisplayer : MonoBehaviour
             cardObj.transform.localScale = Vector3.one * CardSize;
 
             cardObj.MaskCard();
-        }
-    }
-    public void GenerateSoluce(LevelData data)
-    {
+            soluce.Add(cardObj.gameObject);
 
+        }
     }
 
     

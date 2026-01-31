@@ -23,10 +23,10 @@ public class LevelManager : MonoBehaviour
 
     private List<CardUI> _levelStartingInventory;
     //Next up we could have a levelStartingShapes and levelStartingMasks if needed
-    private void Start()
+    private void Awake()
     {
         _currentLevelID = 0;
-        InitLevel(); //Start at level 1
+        InitLevel(); 
     }
 
     [EasyButtons.Button]
