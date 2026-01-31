@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SideSlotsCount: 3
   startingInventory:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  solutionShapes: []
-  solutionMasks: []
+  - {fileID: 8626918478367139457, guid: f9df2ddb0636a3041bfad5c3355c2f25, type: 3}
+  - {fileID: 8626918478367139457, guid: cd1a28756ca5701479bc684ee19f560b, type: 3}
+  solutionShapes:
+  - {fileID: 8626918478367139457, guid: f9df2ddb0636a3041bfad5c3355c2f25, type: 3}
+  solutionMasks:
+  - {fileID: 8626918478367139457, guid: cd1a28756ca5701479bc684ee19f560b, type: 3}

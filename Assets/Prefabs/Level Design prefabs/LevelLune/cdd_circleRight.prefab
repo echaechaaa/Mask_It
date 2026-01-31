@@ -53,10 +53,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -73,14 +69,6 @@ PrefabInstance:
       value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 988177735933600595, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -94,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1679357655653510722, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_Name
-      value: CardDragAndDropCircleRight
+      value: cdd_circleRight
       objectReference: {fileID: 0}
     - target: {fileID: 6678748884085070757, guid: 88f9463f78f6a6042b96e0b3defeb771, type: 3}
       propertyPath: m_LocalScale.x

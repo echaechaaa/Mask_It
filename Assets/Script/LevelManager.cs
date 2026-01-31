@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     private GameObject _currentShapesLayoutGO = null;
     private GameObject _currentMasksLayoutGO = null;
 
-    private List<Card> _levelStartingInventory;
+    private List<CardUI> _levelStartingInventory;
     //Next up we could have a levelStartingShapes and levelStartingMasks if needed
 
 
@@ -38,14 +38,16 @@ public class LevelManager : MonoBehaviour
                 _currentMasksLayoutGO = Instantiate(_masksLayoutPrefab, _canvaTransform);
 
                 //Load level starting data
-                _levelStartingInventory = new List<Card>(levelData.startingInventory);
+                _levelStartingInventory = new List<CardUI>(levelData.startingInventory);
 
                 ////Initialize Data
-                foreach (Card card in _levelStartingInventory)
+                foreach (CardUI cardUI in _levelStartingInventory)
                 {
                     //Add cards to inventory
                     GameObject slot = Instantiate(_cardSlotPrefab, _currentInventoryGO.transform);
                     slot.GetComponent<DropArea>().dropType = DropType.inventory;
+                    CardUI card = Instantiate(cardUI, slot.transform);
+                    //card.GetComponent<DropArea>()
                 }
 
                 for(int i = 0; i < levelData.SideSlotsCount; i++)

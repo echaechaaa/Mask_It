@@ -5,11 +5,11 @@ using System.Collections.Generic;
 public class LevelData : ScriptableObject
 {
     public int SideSlotsCount;
-    public List <Card> startingInventory;
+    public List <CardUI> startingInventory;
 
     //Solution display and mask
 
     [Header("Solution Data")]
-    public List<Card> solutionShapes;
-    public List <Card> solutionMasks;
+    public List<CardUI> solutionShapes;
+    public List <CardUI> solutionMasks;
 }
