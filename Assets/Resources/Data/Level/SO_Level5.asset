@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98efc59202d2b9f4bbc5c696e723b52c, type: 3}
+  m_Name: SO_Level5
+  m_EditorClassIdentifier: 
+  LevelID: 0
+  SideSlotsCount: 5
+  startingInventory:
+  - {fileID: 8626918478367139457, guid: a00ffb0928f19894aabc29960fbadb90, type: 3}
+  - {fileID: 8626918478367139457, guid: b313dd5b73db23d4caf5f8e192e0ad08, type: 3}
+  - {fileID: 8626918478367139457, guid: a461551c68a7c9748892daf27b42d6d6, type: 3}
+  - {fileID: 8626918478367139457, guid: f1db9b9e871db794baea96ed4c6de063, type: 3}
+  - {fileID: 8626918478367139457, guid: 820f5de9cad8bd24aa4c5d767bf66514, type: 3}
+  solutionShapes:
+  - {fileID: 8626918478367139457, guid: f1db9b9e871db794baea96ed4c6de063, type: 3}
+  - {fileID: 8626918478367139457, guid: a00ffb0928f19894aabc29960fbadb90, type: 3}
+  solutionMasks:
+  - {fileID: 8626918478367139457, guid: b313dd5b73db23d4caf5f8e192e0ad08, type: 3}
+  - {fileID: 8626918478367139457, guid: a461551c68a7c9748892daf27b42d6d6, type: 3}
+  - {fileID: 8626918478367139457, guid: 820f5de9cad8bd24aa4c5d767bf66514, type: 3}
