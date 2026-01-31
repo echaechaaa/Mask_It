@@ -51,22 +51,22 @@ PrefabInstance:
     - target: {fileID: 1397332053413988762, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+      objectReference: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
     - target: {fileID: 1397332053413988762, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1429603569393168144, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+      objectReference: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
     - target: {fileID: 1429603569393168144, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5082900576864014053, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: m_Name
-      value: CardDisplayCircle
+      value: CardDisplayTriangle
       objectReference: {fileID: 0}
     - target: {fileID: 8089281180945051223, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
       propertyPath: Mask

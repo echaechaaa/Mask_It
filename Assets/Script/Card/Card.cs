@@ -7,7 +7,7 @@ public class Card : MonoBehaviour
 {
     [HideInInspector] public CardElement[] CardElements;
 
-    [EasyButtons.Button]
+    //[EasyButtons.Button]
     public void MaskCard()
     {
         Debug.Log("MaskCard");
@@ -20,7 +20,7 @@ public class Card : MonoBehaviour
         }
     }
     
-    [EasyButtons.Button]
+    //[EasyButtons.Button]
     public void Showcard()
     {
         Debug.Log("ShowCard");
