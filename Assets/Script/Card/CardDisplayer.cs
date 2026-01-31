@@ -70,5 +70,29 @@ public class CardDisplayer : MonoBehaviour
             Destroy(found.gameObject);
         }
     }
+    public void RemoveAllCards()
+    {
+        if(_maskedCards != null )
+        {
+            // Remove masked cards
+            for (int i = _maskedCards.Count - 1; i >= 0; i--)
+            {
+                if (_maskedCards[i] != null)
+                    Destroy(_maskedCards[i].gameObject);
+            }
+            _maskedCards.Clear();
+        }
+        if(_displayedCards != null )
+        {
+            // Remove displayed cards
+            for (int i = _displayedCards.Count - 1; i >= 0; i--)
+            {
+                if (_displayedCards[i] != null)
+                    Destroy(_displayedCards[i].gameObject);
+            }
+            _displayedCards.Clear();
+        }
+        
+    }
 
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class LevelManager : MonoBehaviour
     private GameObject _currentMasksLayoutGO = null;
 
     private List<CardUI> _levelStartingInventory;
+    public UnityEvent OnClearLevel;
     //Next up we could have a levelStartingShapes and levelStartingMasks if needed
     private void Awake()
     {
@@ -93,6 +95,7 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(_currentMasksLayoutGO);
         }
+        OnClearLevel?.Invoke();
     }
 
     /*[EasyButtons.Button]
