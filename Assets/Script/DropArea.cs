@@ -18,8 +18,11 @@ public class DropArea : MonoBehaviour, IDropHandler
             GameObject droppedCard = eventData.pointerDrag;
             droppedCard.transform.SetParent(gameObject.transform);
             droppedCard.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-            
-            OnCardDropped.Invoke(GetComponentInChildren<CardUI>().Card);
+            Card cardDropped = GetComponentInChildren<CardUI>().Card;
+            OnCardDropped.Invoke(cardDropped);
+            GetComponentInChildren<DragAndDrop>()._lastDroppedArea = this;
+
+
             switch (dropType)
             {
                 case DropType.mask:

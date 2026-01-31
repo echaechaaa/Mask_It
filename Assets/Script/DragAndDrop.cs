@@ -2,11 +2,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
-{   
+{
     private Canvas _canvas; // Reference to the parent canvas necessary to drag correctly with delta
 
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
+
+    [HideInInspector] public DropArea _lastDroppedArea;
 
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             _canvasGroup.alpha = 0.6f;
         }
     }
-  
+
     public void OnDrag(PointerEventData eventData)
     {
         _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor; //To move correctly with canvas scale according to delta
@@ -35,11 +37,32 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(_canvasGroup != null)
+        if (_canvasGroup != null)
         {
             _canvasGroup.blocksRaycasts = true;
             //Undo something when stop dragging here
             _canvasGroup.alpha = 1f;
+
+            bool isDroppedOnDropArea = false;
+            foreach (GameObject Go in eventData.hovered)
+            {
+                if (Go.TryGetComponent<DropArea>(out DropArea dropArea))
+                {
+                    //Set parent to last dropped area if dropped on a drop area
+                    gameObject.transform.SetParent(dropArea.transform);
+                    isDroppedOnDropArea = true;
+                    break;
+                }
+            }
+            if (!isDroppedOnDropArea)
+            {
+                //Return to last dropped area if not dropped on a drop area
+                if (_lastDroppedArea != null)
+                {
+                    transform.SetParent(_lastDroppedArea.transform);
+                    GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                }
+            }
         }
     }
 }
