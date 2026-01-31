@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 public class DropArea : MonoBehaviour, IDropHandler
 {
+    public Card card;
+    public UnityEvent<Card> OnCardDropped;
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
@@ -10,6 +13,7 @@ public class DropArea : MonoBehaviour, IDropHandler
             GameObject droppedCard = eventData.pointerDrag;
             droppedCard.transform.SetParent(gameObject.transform);
             droppedCard.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            OnCardDropped.Invoke(card);
         }
     }
 }
