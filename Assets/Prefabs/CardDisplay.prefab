@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 265000064261355026}
   - component: {fileID: 1253657631401552534}
   m_Layer: 0
-  m_Name: Card
+  m_Name: CardDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ac512db441a0f4da6670478836d9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CardElements: []
 --- !u!1001 &4024654615522671014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,11 +172,11 @@ PrefabInstance:
       objectReference: {fileID: 1429603569393168144}
     - target: {fileID: 5624769730976650480, guid: 6faedf2eb644f4044bb5d863f81af2b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5624769730976650480, guid: 6faedf2eb644f4044bb5d863f81af2b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5624769730976650480, guid: 6faedf2eb644f4044bb5d863f81af2b4, type: 3}
       propertyPath: m_LocalPosition.z

@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {   
-    [SerializeField] private Canvas _canvas; // Reference to the parent canvas necessary to drag correctly with delta
+    private Canvas _canvas; // Reference to the parent canvas necessary to drag correctly with delta
 
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
@@ -12,6 +12,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvasGroup = GetComponent<CanvasGroup>();
+        _canvas = GetComponentInParent<Canvas>();
     }
 
     public void OnPointerDown(PointerEventData eventData) { }//Necessary to implement to detect begin drag
