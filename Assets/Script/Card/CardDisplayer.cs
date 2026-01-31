@@ -13,19 +13,19 @@ public class CardDisplayer : MonoBehaviour
     }
     public void AddCardToDisplay(Card card)
     {
-        GameObject cardObj = Instantiate(card).gameObject;
+        Card cardObj = Instantiate(card);
         cardObj.transform.position = this.transform.position;
         cardObj.transform.parent = this.transform;
-        card.Showcard();
+        cardObj.Showcard();
         _displayedCards.Add(card);
     }
 
     public void AddCardToMask(Card card)
     {
-        GameObject cardObj = Instantiate(card).gameObject;
+        Card cardObj = Instantiate(card);
         cardObj.transform.position = this.transform.position;
         cardObj.transform.parent = this.transform;
-        card.MaskCard();
+        cardObj.MaskCard();
         _maskedCards.Add(card);
     }
 }

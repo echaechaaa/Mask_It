@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 039b3c902bab48d41ae39909b7551c12
+guid: a00ebb57c14321044b6d11d7cfa65bc6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6593163896982478175
-    second: TriangleRectangleLeft_0
+      213: 3551408515042012612
+    second: Octogone_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TriangleRectangleLeft_0
+      name: Octogone_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 129
+        width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a2ed662e506084a0800000000000000
-      internalID: -6593163896982478175
+      spriteID: 4cd606f6a33294130800000000000000
+      internalID: 3551408515042012612
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      TriangleRectangleLeft_0: -6593163896982478175
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

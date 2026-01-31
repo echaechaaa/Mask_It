@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 039b3c902bab48d41ae39909b7551c12
+guid: 28b68b4eef84052459752d782d1d162f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6593163896982478175
-    second: TriangleRectangleLeft_0
+      213: 5255531142322205093
+    second: Horizontal Bar Boat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TriangleRectangleLeft_0
+      name: Horizontal Bar Boat_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 129
-        height: 256
+        y: 57
+        width: 256
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a2ed662e506084a0800000000000000
-      internalID: -6593163896982478175
+      spriteID: 5a13e1c9ab56fe840800000000000000
+      internalID: 5255531142322205093
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      TriangleRectangleLeft_0: -6593163896982478175
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

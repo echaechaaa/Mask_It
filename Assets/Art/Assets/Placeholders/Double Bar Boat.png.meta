@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 039b3c902bab48d41ae39909b7551c12
+guid: 47df88a567bd35340bc354a2ff0d96e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6593163896982478175
-    second: TriangleRectangleLeft_0
+      213: 2958259653208075446
+    second: Double Bar Boat_0
+  - first:
+      213: -7614807022326596501
+    second: Double Bar Boat_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TriangleRectangleLeft_0
+      name: Double Bar Boat_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 129
-        height: 256
+        y: 74
+        width: 19
+        height: 182
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a2ed662e506084a0800000000000000
-      internalID: -6593163896982478175
+      spriteID: 6bc66d62b79dd0920800000000000000
+      internalID: 2958259653208075446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Double Bar Boat_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 74
+        width: 20
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6cb211bb55c25690800000000000000
+      internalID: -7614807022326596501
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      TriangleRectangleLeft_0: -6593163896982478175
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
