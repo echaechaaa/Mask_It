@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98efc59202d2b9f4bbc5c696e723b52c, type: 3}
   m_Name: SO_Level3
   m_EditorClassIdentifier: 
-  SideSlotsCount: 0
-  startingInventory: []
-  solutionShapes: []
-  solutionMasks: []
+  LevelID: 0
+  SideSlotsCount: 4
+  startingInventory:
+  - {fileID: 8626918478367139457, guid: cf702c6a912ed4c46a174086396cc438, type: 3}
+  - {fileID: 8626918478367139457, guid: 56bfe5d1b0909784fa2ff781ef384250, type: 3}
+  - {fileID: 8626918478367139457, guid: f693e8ea51d607646b01148c2fadf153, type: 3}
+  - {fileID: 8626918478367139457, guid: 8a74f3d0182b9ea4da208a19a988f237, type: 3}
+  solutionShapes:
+  - {fileID: 8626918478367139457, guid: cf702c6a912ed4c46a174086396cc438, type: 3}
+  solutionMasks:
+  - {fileID: 8626918478367139457, guid: f693e8ea51d607646b01148c2fadf153, type: 3}
+  - {fileID: 8626918478367139457, guid: 8a74f3d0182b9ea4da208a19a988f237, type: 3}
