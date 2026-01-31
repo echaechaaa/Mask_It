@@ -145,7 +145,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2597603726723258038, guid: 6faedf2eb644f4044bb5d863f81af2b4, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3617923195898038687, guid: 6faedf2eb644f4044bb5d863f81af2b4, type: 3}
       propertyPath: m_Name
@@ -219,7 +219,7 @@ SpriteMask:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427564848914329657}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
