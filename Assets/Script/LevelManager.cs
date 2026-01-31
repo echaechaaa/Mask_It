@@ -44,13 +44,18 @@ public class LevelManager : MonoBehaviour
                 foreach (Card card in _levelStartingInventory)
                 {
                     //Add cards to inventory
-                    Instantiate(_cardSlotPrefab, _currentInventoryGO.transform);
+                    GameObject slot = Instantiate(_cardSlotPrefab, _currentInventoryGO.transform);
+                    slot.GetComponent<DropArea>().dropType = DropType.inventory;
                 }
 
                 for(int i = 0; i < levelData.SideSlotsCount; i++)
                 {
-                    Instantiate(_cardSlotPrefab, _currentShapesLayoutGO.transform);
-                    Instantiate(_cardSlotPrefab, _currentMasksLayoutGO.transform);
+                    GameObject slotShape = Instantiate(_cardSlotPrefab, _currentShapesLayoutGO.transform);
+                    slotShape.GetComponent<DropArea>().dropType = DropType.display;
+
+                    GameObject slotMask = Instantiate(_cardSlotPrefab, _currentMasksLayoutGO.transform);
+                    slotMask.GetComponent<DropArea>().dropType = DropType.mask;
+
                 }
             }
         }
