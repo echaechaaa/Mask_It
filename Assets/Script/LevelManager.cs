@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -70,7 +72,6 @@ public class LevelManager : MonoBehaviour
 
                     CardUI card = Instantiate(cardInventory.Card, slot.transform);
                     card.transform.rotation = Quaternion.Euler(new Vector3(0, 0, cardInventory.startRot));
-                    Debug.Log(cardInventory.startRot);
                     card.currentRot = cardInventory.startRot;
                     card.transform.SetParent(slot.transform);
                     card.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
@@ -116,19 +117,30 @@ public class LevelManager : MonoBehaviour
         _currentLevelID %= _levelsInOrder.Count;
         InitLevel();
     }*/
-
+    [SerializeField] private FadeToBlack _fade;
     [EasyButtons.Button]
     public void GoToNextLevel()
     {
-
-        _currentLevelID +=1;
+        _fade.OnMiddleFade.AddListener(GoToNextLevelFade);
+        _fade.LaunchFade();
+    }
+    public void GoToNextLevelFade()
+    {
+        _fade.OnMiddleFade.RemoveListener(GoToNextLevelFade);
+        _currentLevelID += 1;
         _currentLevelID %= _levelsInOrder.Count;
+
         InitLevel();
     }
 
     public void ResetLevel()
     {
         InitLevel();
+    }
+
+    public void GoBackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 
