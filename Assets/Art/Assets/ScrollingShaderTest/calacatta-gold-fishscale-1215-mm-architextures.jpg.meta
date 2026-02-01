@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      calacatta-gold-fishscale-1215-mm-architextures_0: 2719851829104215686
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
