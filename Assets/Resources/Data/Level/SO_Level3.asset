@@ -15,19 +15,25 @@ MonoBehaviour:
   LevelID: 0
   SideSlotsCount: 4
   startingInventory:
-  - Card: {fileID: 0}
+  - Card: {fileID: 8626918478367139457, guid: e5ff0874c229af54ca95dc003691d3c3, type: 3}
+    startRot: 90
+  - Card: {fileID: 8626918478367139457, guid: d2034e1922c04aa4280ef8a5dd5deb26, type: 3}
+    startRot: 180
+  - Card: {fileID: 8626918478367139457, guid: 7066a429028ce604dac1fea8511a2a4d, type: 3}
+    startRot: 270
+  - Card: {fileID: 8626918478367139457, guid: 04b943d7f636341458702e2fabb8f940, type: 3}
     startRot: 0
-  - Card: {fileID: 0}
-    startRot: 0
-  - Card: {fileID: 0}
-    startRot: 0
-  - Card: {fileID: 0}
-    startRot: 0
+  - Card: {fileID: 8626918478367139457, guid: b9c6bbe7047ce6841b6ae5b7d9ed4af9, type: 3}
+    startRot: 90
   solutionShapes:
-  - CardUI: {fileID: 0}
-    allowedRotation: 
-  solutionMasks:
-  - CardUI: {fileID: 0}
+  - CardUI: {fileID: 8626918478367139457, guid: 7066a429028ce604dac1fea8511a2a4d, type: 3}
     allowedRotation: 00000000
-  - CardUI: {fileID: 0}
+  - CardUI: {fileID: 8626918478367139457, guid: 04b943d7f636341458702e2fabb8f940, type: 3}
+    allowedRotation: 00000000
+  solutionMasks:
+  - CardUI: {fileID: 8626918478367139457, guid: e5ff0874c229af54ca95dc003691d3c3, type: 3}
+    allowedRotation: 00000000
+  - CardUI: {fileID: 8626918478367139457, guid: d2034e1922c04aa4280ef8a5dd5deb26, type: 3}
+    allowedRotation: 00000000
+  - CardUI: {fileID: 8626918478367139457, guid: b9c6bbe7047ce6841b6ae5b7d9ed4af9, type: 3}
     allowedRotation: 00000000
