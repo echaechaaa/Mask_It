@@ -26,7 +26,11 @@ public class AudioManager : MonoBehaviour
     private float _musicVolumeBeforeMute = 0.0f;
     private float _sfxVolumeBeforeMute = 0.0f;
 
+    //Slider Related
+    private float _musicVolumeRatioComparedToSFX = 0.2f;
+
     private AudioClip _currentPlayingMusic = null;
+
 
     #region Callable Methods
     public void PlayMusic(AudioClip musicToPlay)
@@ -100,7 +104,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
         _sfxVolume = value;
-        _musicVolume = value;
+        _musicVolume = value * _musicVolumeRatioComparedToSFX;
     }
     #endregion
 
