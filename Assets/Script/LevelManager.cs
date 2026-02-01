@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -129,6 +131,11 @@ public class LevelManager : MonoBehaviour
     public void ResetLevel()
     {
         InitLevel();
+    }
+
+    public void GoBackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 
