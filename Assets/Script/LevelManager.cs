@@ -120,8 +120,14 @@ public class LevelManager : MonoBehaviour
     [EasyButtons.Button]
     public void GoToNextLevel()
     {
+
         _currentLevelID +=1;
         _currentLevelID %= _levelsInOrder.Count;
+        InitLevel();
+    }
+
+    public void ResetLevel()
+    {
         InitLevel();
     }
 }
