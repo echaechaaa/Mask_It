@@ -15,8 +15,6 @@ MonoBehaviour:
   LevelID: 0
   SideSlotsCount: 5
   startingInventory:
-  - Card: {fileID: 8626918478367139457, guid: a00ffb0928f19894aabc29960fbadb90, type: 3}
-    startRot: 90
   - Card: {fileID: 8626918478367139457, guid: b313dd5b73db23d4caf5f8e192e0ad08, type: 3}
     startRot: 180
   - Card: {fileID: 8626918478367139457, guid: a461551c68a7c9748892daf27b42d6d6, type: 3}
@@ -27,9 +25,7 @@ MonoBehaviour:
     startRot: 270
   solutionShapes:
   - CardUI: {fileID: 8626918478367139457, guid: f1db9b9e871db794baea96ed4c6de063, type: 3}
-    allowedRotation: 00000000
-  - CardUI: {fileID: 8626918478367139457, guid: a00ffb0928f19894aabc29960fbadb90, type: 3}
-    allowedRotation: 00000000
+    allowedRotation: 000000005a000000b40000000e010000
   solutionMasks:
   - CardUI: {fileID: 8626918478367139457, guid: b313dd5b73db23d4caf5f8e192e0ad08, type: 3}
     allowedRotation: 00000000
