@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -119,9 +121,20 @@ public class LevelManager : MonoBehaviour
     [EasyButtons.Button]
     public void GoToNextLevel()
     {
+
         _currentLevelID +=1;
         _currentLevelID %= _levelsInOrder.Count;
         InitLevel();
+    }
+
+    public void ResetLevel()
+    {
+        InitLevel();
+    }
+
+    public void GoBackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 
