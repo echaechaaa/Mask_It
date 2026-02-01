@@ -43,7 +43,7 @@ public class FadeToBlack : MonoBehaviour
     public void LaunchFadeOut()
     {
         if (!isFading)
-
+            
             StartCoroutine(Fade2(1f, 0f));
 
     }
