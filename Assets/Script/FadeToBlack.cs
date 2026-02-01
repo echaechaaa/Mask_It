@@ -12,6 +12,7 @@ public class FadeToBlack : MonoBehaviour
     public UnityEvent OnMiddleFade;
 
     private bool isFading;
+    public bool fadeStart = true;
 
     //public static FadeToBlack instance;
     private void Awake()
@@ -25,10 +26,27 @@ public class FadeToBlack : MonoBehaviour
         {
             Destroy(gameObject);
         }*/
-        _canvasGroup.alpha = 1f;
-        StartCoroutine(Fade2(1f, 0f));
+        if(fadeStart)
+        {
+            _canvasGroup.alpha = 1f;
+            StartCoroutine(Fade2(1f, 0f));
+        }
+        
     }
+    [EasyButtons.Button]
+    public void LaunchFadeIn()
+    {
+        if (!isFading)
+            StartCoroutine(FadeInRoutine());
+    }
+    [EasyButtons.Button]
+    public void LaunchFadeOut()
+    {
+        if (!isFading)
 
+            StartCoroutine(Fade2(1f, 0f));
+
+    }
     [EasyButtons.Button]
     public void LaunchFade()
     {
@@ -51,6 +69,18 @@ public class FadeToBlack : MonoBehaviour
 
         // Fade back in
         yield return StartCoroutine(Fade(1f, 0f));
+
+        isFading = false;
+    }
+    private IEnumerator FadeInRoutine()
+    {
+        isFading = true;
+
+        // Fade to black
+        yield return StartCoroutine(Fade(0f, 1f));
+
+        // Call event in the middle (scene switch, logic, etc.)
+        OnMiddleFade?.Invoke();
 
         isFading = false;
     }
