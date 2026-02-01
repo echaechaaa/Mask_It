@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Canvas _canvas; // Reference to the parent canvas necessary to drag correctly with delta
 
@@ -9,12 +9,25 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private CanvasGroup _canvasGroup;
 
     [HideInInspector] public DropArea _lastDroppedArea;
-
+    public float maxSize;
+    private float initialsize;
+    public float smoothDamp;
+    private float targetSize;
+    float currentSize;
+    float refvel;
+    private void Update()
+    {
+        currentSize = Mathf.SmoothDamp(currentSize, targetSize, ref refvel, smoothDamp);
+        transform.localScale = currentSize * Vector3.one;
+    }
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvasGroup = GetComponent<CanvasGroup>();
         _canvas = GetComponentInParent<Canvas>();
+        initialsize = transform.localScale.x;
+        targetSize = initialsize;
+        currentSize = initialsize;
     }
 
     public void OnPointerDown(PointerEventData eventData) { }//Necessary to implement to detect begin drag
@@ -81,5 +94,15 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             }
         }
         return true; // No children found, drop is allowed
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        targetSize = maxSize;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        targetSize = initialsize;
     }
 }

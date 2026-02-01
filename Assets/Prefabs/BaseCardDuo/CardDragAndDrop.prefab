@@ -144,8 +144,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 3ee8cdadaa667a4439afc6897ef88a18, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lastDroppedArea: {fileID: 0}
+  maxSize: 180
+  smoothDamp: 0.1
 --- !u!225 &5797695182444308226
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -193,3 +195,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 1253657631401552534, guid: 371cc13e5fe83424cabffde134a23593, type: 3}
   Cardobj: {fileID: 0}
+  currentRot: 0
