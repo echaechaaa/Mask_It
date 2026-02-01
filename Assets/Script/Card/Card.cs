@@ -9,11 +9,11 @@ public class Card : MonoBehaviour
     [HideInInspector] public CardUI CardUI;
 
     [HideInInspector] public Card PrefabSource;
+    public int currentRot;
 
     //[EasyButtons.Button]
     public void MaskCard()
     {
-        Debug.Log("MaskCard");
 
         CardElements = GetComponentsInChildren<CardElement>();
         foreach (var card in CardElements)
@@ -26,7 +26,6 @@ public class Card : MonoBehaviour
     //[EasyButtons.Button]
     public void Showcard()
     {
-        Debug.Log("ShowCard");
         CardElements = GetComponentsInChildren<CardElement>();
         foreach (var card in CardElements)
         {

@@ -37,6 +37,7 @@ public class DropArea : MonoBehaviour, IDropHandler
                     CardDisplayer.Instance.RemoveCard(GetComponentInChildren<CardUI>());
                     break;
             }
+            CardDisplayer.Instance.ChecklevelSuccess();
         }
     }
 

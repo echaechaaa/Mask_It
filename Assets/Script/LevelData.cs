@@ -12,12 +12,19 @@ public class LevelData : ScriptableObject
     //Solution display and mask
 
     [Header("Solution Data")]
-    public List<CardUI> solutionShapes;
-    public List <CardUI> solutionMasks;
+    public List<SolutionElement> solutionShapes;
+    public List <SolutionElement> solutionMasks;
 }
 [Serializable]
 public class CardInventory
 {
     public CardUI Card;
     public int startRot= 0;
+}
+
+[Serializable]
+public class SolutionElement
+{
+    public CardUI CardUI;
+    public List<int> allowedRotation;
 }

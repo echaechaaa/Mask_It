@@ -31,6 +31,11 @@ public class LevelManager : MonoBehaviour
         InitLevel(); 
     }
 
+    public LevelData GetCurrentlevel()
+    {
+        return _levelsInOrder[_currentLevelID];
+    }
+
     [EasyButtons.Button]
     public void InitLevel()
     {
