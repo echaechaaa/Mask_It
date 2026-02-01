@@ -8,6 +8,7 @@ public class RotateCardInput : MonoBehaviour
     public GraphicRaycaster graphicRaycaster;
     public EventSystem eventSystem;
 
+
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -37,13 +38,13 @@ public class RotateCardInput : MonoBehaviour
         // Exemple : vérifier si un composant est présent
         if (hitObject.TryGetComponent<CardUI>(out CardUI cardUI))
         {
-            Debug.Log("CardUI trouvé sur : " + hitObject.name);
             cardUI.Rotate();
+            CardDisplayer.Instance.ChecklevelSuccess();
         }
         else if(hitObject.transform.parent.TryGetComponent<CardUI>(out CardUI cardUI2))
         {
-            Debug.Log("CardUI trouvé sur : " + hitObject.name);
             cardUI2.Rotate();
+            CardDisplayer.Instance.ChecklevelSuccess();
         }
         else
         {

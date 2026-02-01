@@ -12,17 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98efc59202d2b9f4bbc5c696e723b52c, type: 3}
   m_Name: SO_Level4
   m_EditorClassIdentifier: 
+  LevelID: 0
   SideSlotsCount: 3
   startingInventory:
-  - {fileID: 8626918478367139457, guid: 149e4c53fcad3c94b97361b990883ad7, type: 3}
-  - {fileID: 8626918478367139457, guid: ed5c3c50749a1d74a8e821217667bcaa, type: 3}
-  - {fileID: 8626918478367139457, guid: 4dafa4a4ee23919479feb2aa7ac1d779, type: 3}
-  - {fileID: 8626918478367139457, guid: fb3a7db795b73e947a915dfe81b62279, type: 3}
-  - {fileID: 8626918478367139457, guid: cf702c6a912ed4c46a174086396cc438, type: 3}
-  - {fileID: 8626918478367139457, guid: 9e173b4b7a4d3ce469dd2e6e298a3a73, type: 3}
+  - Card: {fileID: 8626918478367139457, guid: 9e173b4b7a4d3ce469dd2e6e298a3a73, type: 3}
+    startRot: 180
+  - Card: {fileID: 8626918478367139457, guid: 149e4c53fcad3c94b97361b990883ad7, type: 3}
+    startRot: 90
+  - Card: {fileID: 8626918478367139457, guid: ed5c3c50749a1d74a8e821217667bcaa, type: 3}
+    startRot: 270
+  - Card: {fileID: 8626918478367139457, guid: 4dafa4a4ee23919479feb2aa7ac1d779, type: 3}
+    startRot: 90
+  - Card: {fileID: 8626918478367139457, guid: fb3a7db795b73e947a915dfe81b62279, type: 3}
+    startRot: 0
+  - Card: {fileID: 8626918478367139457, guid: cf702c6a912ed4c46a174086396cc438, type: 3}
+    startRot: 0
   solutionShapes:
-  - {fileID: 8626918478367139457, guid: 4dafa4a4ee23919479feb2aa7ac1d779, type: 3}
+  - CardUI: {fileID: 8626918478367139457, guid: 4dafa4a4ee23919479feb2aa7ac1d779, type: 3}
+    allowedRotation: 000000005a000000b40000000e010000
   solutionMasks:
-  - {fileID: 8626918478367139457, guid: 149e4c53fcad3c94b97361b990883ad7, type: 3}
-  - {fileID: 8626918478367139457, guid: ed5c3c50749a1d74a8e821217667bcaa, type: 3}
-  - {fileID: 8626918478367139457, guid: fb3a7db795b73e947a915dfe81b62279, type: 3}
+  - CardUI: {fileID: 8626918478367139457, guid: fb3a7db795b73e947a915dfe81b62279, type: 3}
+    allowedRotation: 00000000
+  - CardUI: {fileID: 8626918478367139457, guid: ed5c3c50749a1d74a8e821217667bcaa, type: 3}
+    allowedRotation: 00000000
+  - CardUI: {fileID: 8626918478367139457, guid: 149e4c53fcad3c94b97361b990883ad7, type: 3}
+    allowedRotation: 00000000

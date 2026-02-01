@@ -14,6 +14,8 @@ public class CardUI : MonoBehaviour
         if(Cardobj != null )
         {
             Cardobj.transform.rotation = transform.rotation;
+            Cardobj.GetComponent<Card>().currentRot = currentRot;
+            Debug.Log(currentRot);
         }
     }
 }

@@ -16,7 +16,6 @@ public class SolutionDisplayer : MonoBehaviour
             foreach (GameObject gameObj in soluce)
             {
                 Destroy(gameObj);
-                Debug.Log("destroy");
             }
         }
         

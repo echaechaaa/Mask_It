@@ -21,7 +21,7 @@ MonoBehaviour:
     startRot: 180
   solutionShapes:
   - CardUI: {fileID: 8626918478367139457, guid: f9df2ddb0636a3041bfad5c3355c2f25, type: 3}
-    allowedRotation: 00000000
+    allowedRotation: 000000005a000000b40000000e010000
   solutionMasks:
   - CardUI: {fileID: 8626918478367139457, guid: cd1a28756ca5701479bc684ee19f560b, type: 3}
     allowedRotation: 5a000000
