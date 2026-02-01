@@ -8,12 +8,20 @@ public class MoveShapeMenu : MonoBehaviour
     public float speed;
     float currentRot;
     float time = 0f;
+    public Gradient gradient;
+
+    public Color GetRandomColor()
+    {
+        float t = Random.value; // random between 0 and 1
+        return gradient.Evaluate(t);
+    }
     void Awake()
     {
         rotationspeed *= (Random.value + 0.5f);
         speed *= (Random.value + 0.5f);
         transform.localScale *= (Random.value + 0.5f);
-        GetComponent<SpriteRenderer>().color = Random.ColorHSV();
+        GetComponent<SpriteRenderer>().color = GetRandomColor();
+
     }
     // Update is called once per frame
     void Update()

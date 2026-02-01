@@ -10,7 +10,7 @@ public class Shapebackground : MonoBehaviour
     public float timeBetweenSpawn;
     public float radius;
     public float offsetinfluence = 0.3f;
-    public Gradient gradient;
+    
     private void Awake()
     {
         StartCoroutine(spawn());
