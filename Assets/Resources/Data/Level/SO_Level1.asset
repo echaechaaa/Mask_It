@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_Level1
   m_EditorClassIdentifier: 
   LevelID: 0
-  SideSlotsCount: 3
+  SideSlotsCount: 1
   startingInventory:
   - Card: {fileID: 8626918478367139457, guid: f9df2ddb0636a3041bfad5c3355c2f25, type: 3}
     startRot: 0
