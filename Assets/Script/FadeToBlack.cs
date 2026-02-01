@@ -25,8 +25,8 @@ public class FadeToBlack : MonoBehaviour
         {
             Destroy(gameObject);
         }*/
-
-        StartCoroutine(Fade(1f, 0f));
+        _canvasGroup.alpha = 1f;
+        StartCoroutine(Fade2(1f, 0f));
     }
 
     [EasyButtons.Button]
@@ -65,6 +65,28 @@ public class FadeToBlack : MonoBehaviour
         while (t < fadeDuration)
         {
             t += Time.unscaledDeltaTime;
+            Debug.Log(Mathf.Lerp(from, to, t / fadeDuration));
+
+            _canvasGroup.alpha = Mathf.Lerp(from, to, t / fadeDuration);
+            yield return null;
+        }
+
+        _canvasGroup.alpha = to;
+        _canvasGroup.blocksRaycasts = to > 0f;
+    }
+    private IEnumerator Fade2(float from, float to)
+    {
+        yield return new WaitForSeconds(0.6f);
+        Debug.Log("Yo");
+        float t = 0f;
+        _canvasGroup.alpha = from;
+        _canvasGroup.blocksRaycasts = true;
+
+        while (t < fadeDuration)
+        {
+            t += Time.unscaledDeltaTime;
+            Debug.Log(Mathf.Lerp(from, to, t / fadeDuration));
+
             _canvasGroup.alpha = Mathf.Lerp(from, to, t / fadeDuration);
             yield return null;
         }

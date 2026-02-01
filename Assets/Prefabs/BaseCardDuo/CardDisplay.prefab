@@ -135,6 +135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardElements:
   - {fileID: 8089281180945051223}
+  CardUI: {fileID: 0}
+  PrefabSource: {fileID: 0}
+  currentRot: 0
 --- !u!1001 &4024654615522671014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143,6 +146,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 265000064261355026}
     m_Modifications:
+    - target: {fileID: 2597603726723258038, guid: 6faedf2eb644f4044bb5d863f81af2b4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597603726723258038, guid: 6faedf2eb644f4044bb5d863f81af2b4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597603726723258038, guid: 6faedf2eb644f4044bb5d863f81af2b4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2784314
+      objectReference: {fileID: 0}
     - target: {fileID: 2597603726723258038, guid: 6faedf2eb644f4044bb5d863f81af2b4, type: 3}
       propertyPath: m_Enabled
       value: 1
