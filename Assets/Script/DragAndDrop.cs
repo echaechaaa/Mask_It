@@ -41,6 +41,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         initialsize = transform.localScale.x;
         targetSize = initialsize;
         currentSize = initialsize;
+        lastrelease = Time.time;
     }
 
     public void OnPointerDown(PointerEventData eventData) {
@@ -61,6 +62,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+        targetSize = maxSize;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -92,6 +94,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
                 transform.SetParent(_lastDroppedArea.transform);
                 GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             }
+            targetSize = initialsize;
+            lastrelease = Time.time;
             OnDrop?.Invoke();
         }
     }
@@ -107,13 +111,17 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         }
         return true; // No children found, drop is allowed
     }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if( Time.time - lastrelease < 0.2f)
+        {
+            return;
+        }
         targetSize = maxSize;
         OnPointerEnter1?.Invoke();
-    }
 
+    }
+    float lastrelease = 0f;
     public void OnPointerExit(PointerEventData eventData)
     {
         targetSize = initialsize;
