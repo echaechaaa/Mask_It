@@ -169,8 +169,9 @@ MonoBehaviour:
   - {fileID: 8689709667571628975, guid: 363790b193d91644eb8b356c7fb1ca9b, type: 3}
   - {fileID: 8689709667571628975, guid: 6da181d3372c61c4a8e46c9e0b54f3f6, type: 3}
   - {fileID: 8689709667571628975, guid: d497b8dbf128eeb42900ba4ffeac902b, type: 3}
-  timeBetweenSpawn: 0.2
-  radius: 10
+  timeBetweenSpawn: 0.7
+  radius: 15
+  offsetinfluence: 0.5
 --- !u!1 &590544704
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +328,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6320754, g: 0.7962802, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
