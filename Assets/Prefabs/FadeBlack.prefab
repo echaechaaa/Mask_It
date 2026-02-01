@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 6462644804666944636}
-  fadeDuration: 0.3
+  fadeDuration: 0.4
   OnMiddleFade:
     m_PersistentCalls:
       m_Calls:
