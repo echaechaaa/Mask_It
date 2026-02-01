@@ -16,6 +16,13 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private SolutionDisplayer _solutionDisplayer;
 
+    public Color borderInventory;
+    public Color backGroundInventory;
+    public Color borderMask;
+    public Color backGroundMask;
+    public Color borderShape;
+    public Color backGroundShape;
+
     private int _currentLevelID = 0;
 
     private List<CardInventory> _levelStartingInventory;
@@ -59,6 +66,7 @@ public class LevelManager : MonoBehaviour
                     //Add cards to inventory
                     GameObject slot = Instantiate(_cardSlotPrefab, _inventory.transform);
                     slot.GetComponent<DropArea>().dropType = DropType.INVENTORY;
+                    slot.GetComponent<SlotColor>().SetColors(borderInventory, backGroundInventory);
 
                     CardUI card = Instantiate(cardInventory.Card, slot.transform);
                     card.transform.rotation = Quaternion.Euler(new Vector3(0, 0, cardInventory.startRot));
@@ -68,15 +76,19 @@ public class LevelManager : MonoBehaviour
                     card.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
                     card.GetComponent<DragAndDrop>()._lastDroppedArea = slot.GetComponent<DropArea>(); //Probs doesnt work
+
+                    
                 }
 
                 for (int i = 0; i < currentLevelData.SideSlotsCount; i++)
                 {
                     GameObject slotShape = Instantiate(_cardSlotPrefab, _shapesLayout.transform);
                     slotShape.GetComponent<DropArea>().dropType = DropType.DISPLAY;
+                    slotShape.GetComponent<SlotColor>().SetColors(borderShape, backGroundShape);
 
                     GameObject slotMask = Instantiate(_cardSlotPrefab, _masksLayout.transform);
                     slotMask.GetComponent<DropArea>().dropType = DropType.MASK;
+                    slotMask.GetComponent<SlotColor>().SetColors(borderMask, backGroundMask);
 
                 }
             }

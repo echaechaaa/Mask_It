@@ -44,8 +44,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78768712f80d8554391842bceb3de4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelsInOrder:
+  - {fileID: 11400000, guid: 13f57e41dccc0ad47b17f2a0f956504f, type: 2}
+  - {fileID: 11400000, guid: aae780f49fc76014e8cf912e101ee143, type: 2}
   _canvaTransform: {fileID: 0}
-  _shapesLayoutPrefab: {fileID: 761515000281911357, guid: 2626eae875ddad744867014e3d8d9c49, type: 3}
-  _masksLayoutPrefab: {fileID: 1693834377038580693, guid: 76d82f6f6f4e22e4385b1c9bd01bc94d, type: 3}
-  _inventoryPrefab: {fileID: 3686050990538234941, guid: 035345fd5ed82bf4eaa4a6bcaca91096, type: 3}
+  _shapesLayout: {fileID: 0}
+  _masksLayout: {fileID: 0}
+  _inventory: {fileID: 0}
   _cardSlotPrefab: {fileID: 5186909596704977686, guid: 9f4caa4f749233c4090a784edb194c02, type: 3}
+  _solutionDisplayer: {fileID: 0}
+  borderInventory: {r: 0, g: 0.680599, b: 1, a: 1}
+  backGroundInventory: {r: 0, g: 0.9935813, b: 1, a: 1}
+  borderMask: {r: 0, g: 0.6679245, b: 0.16792625, a: 1}
+  backGroundMask: {r: 0.5113207, g: 1, b: 0.7247787, a: 1}
+  borderShape: {r: 0, g: 0.68235296, b: 1, a: 1}
+  backGroundShape: {r: 0, g: 0.99215686, b: 1, a: 1}
+  OnClearLevel:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CardDisplayer, Assembly-CSharp
+        m_MethodName: RemoveAllCards
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
