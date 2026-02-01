@@ -4,7 +4,7 @@ public class CardUI : MonoBehaviour
 {
     public Card Card;
     [HideInInspector] public GameObject Cardobj;
-    int currentRot = 0;
+    public int currentRot = 0;
     public void Rotate()
     {
         Debug.Log("Rotate");

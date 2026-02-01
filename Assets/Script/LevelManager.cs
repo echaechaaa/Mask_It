@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
     private GameObject _currentShapesLayoutGO = null;
     private GameObject _currentMasksLayoutGO = null;
 
-    private List<CardUI> _levelStartingInventory;
+    private List<CardInventory> _levelStartingInventory;
     public UnityEvent OnClearLevel;
     //Next up we could have a levelStartingShapes and levelStartingMasks if needed
     private void Awake()
@@ -53,16 +53,19 @@ public class LevelManager : MonoBehaviour
                 _currentShapesLayoutGO = Instantiate(_shapesLayoutPrefab, _canvaTransform);
                 _currentMasksLayoutGO = Instantiate(_masksLayoutPrefab, _canvaTransform);
 
-                _levelStartingInventory = new List<CardUI>(currentLevelData.startingInventory);
+                _levelStartingInventory = new List<CardInventory>(currentLevelData.startingInventory);
 
                 ////Initialize Data
-                foreach (CardUI cardUI in _levelStartingInventory)
+                foreach (CardInventory cardInventory in _levelStartingInventory)
                 {
                     //Add cards to inventory
                     GameObject slot = Instantiate(_cardSlotPrefab, _currentInventoryGO.transform);
                     slot.GetComponent<DropArea>().dropType = DropType.INVENTORY;
 
-                    CardUI card = Instantiate(cardUI, slot.transform);
+                    CardUI card = Instantiate(cardInventory.Card, slot.transform);
+                    card.transform.rotation = Quaternion.Euler(new Vector3(0, 0, cardInventory.startRot));
+                    Debug.Log(cardInventory.startRot);
+                    card.currentRot = cardInventory.startRot;
                     card.transform.SetParent(slot.transform);
                     card.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
