@@ -19,7 +19,7 @@ MonoBehaviour:
     startRot: 180
   - Card: {fileID: 8626918478367139457, guid: 149e4c53fcad3c94b97361b990883ad7, type: 3}
     startRot: 90
-  - Card: {fileID: 8626918478367139457, guid: ed5c3c50749a1d74a8e821217667bcaa, type: 3}
+  - Card: {fileID: 8626918478367139457, guid: 89a24a7c222eff34db52c6b6f1306cbf, type: 3}
     startRot: 270
   - Card: {fileID: 8626918478367139457, guid: 4dafa4a4ee23919479feb2aa7ac1d779, type: 3}
     startRot: 90
@@ -33,7 +33,7 @@ MonoBehaviour:
   solutionMasks:
   - CardUI: {fileID: 8626918478367139457, guid: fb3a7db795b73e947a915dfe81b62279, type: 3}
     allowedRotation: 00000000
-  - CardUI: {fileID: 8626918478367139457, guid: ed5c3c50749a1d74a8e821217667bcaa, type: 3}
+  - CardUI: {fileID: 8626918478367139457, guid: 89a24a7c222eff34db52c6b6f1306cbf, type: 3}
     allowedRotation: 00000000
   - CardUI: {fileID: 8626918478367139457, guid: 149e4c53fcad3c94b97361b990883ad7, type: 3}
     allowedRotation: 00000000
