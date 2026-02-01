@@ -78,7 +78,6 @@ public class CardDisplayer : MonoBehaviour
     }
     public void RemoveAllCards()
     {
-        Debug.Log("remove all");
         if(_maskedCards != null )
         {
             // Remove masked cards

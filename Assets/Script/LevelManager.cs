@@ -70,7 +70,6 @@ public class LevelManager : MonoBehaviour
 
                     CardUI card = Instantiate(cardInventory.Card, slot.transform);
                     card.transform.rotation = Quaternion.Euler(new Vector3(0, 0, cardInventory.startRot));
-                    Debug.Log(cardInventory.startRot);
                     card.currentRot = cardInventory.startRot;
                     card.transform.SetParent(slot.transform);
                     card.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
