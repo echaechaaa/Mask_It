@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestBackGround
-  m_Shader: {fileID: -6465566751694194690, guid: dc513be49d535d7419af4093a6c441dd, type: 3}
+  m_Name: TestBackGround 1
+  m_Shader: {fileID: -6465566751694194690, guid: c0c743b83ec8a8542b850bb7c56d91d5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -67,18 +67,27 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ColorMask: 15
     - _EnableExternalAlpha: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ScrollSpeed: 0.015
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UIMaskSoftnessX: 1
+    - _UIMaskSoftnessY: 1
     - _ZWrite: 0
     - _comp: 0.5
     - _modulo: 0
     - _pow: 1
     m_Colors:
+    - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_1: {r: 0, g: 0.40027502, b: 0.4943396, a: 0}
-    - _Color_2: {r: 0, g: 0.2669621, b: 0.4792453, a: 0}
+    - _Color_1: {r: 0.3289925, g: 0.6075471, b: 0.48816654, a: 1}
+    - _Color_2: {r: 0.25662506, g: 0.5018867, b: 0.39728984, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ScrollDirection: {r: -1, g: -1, b: 0, a: 0}
   m_BuildTextureStacks: []

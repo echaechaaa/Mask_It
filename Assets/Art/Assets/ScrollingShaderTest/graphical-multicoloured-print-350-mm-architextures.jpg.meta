@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 62998c8632ad46e4f91d81ffe818300e
+guid: 021657a703a03794790ace855bfa7330
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3575869511931301387
-    second: victorian-glazed-6-point-star-mosaic-1528-mm-architextures_0
+      213: 2512758815427377884
+    second: graphical-multicoloured-print-350-mm-architextures_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: victorian-glazed-6-point-star-mosaic-1528-mm-architextures_0
+      name: graphical-multicoloured-print-350-mm-architextures_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 778
+        width: 900
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0e80d5106a00a130800000000000000
-      internalID: 3575869511931301387
+      spriteID: cdab7c754dc1fd220800000000000000
+      internalID: 2512758815427377884
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      victorian-glazed-6-point-star-mosaic-1528-mm-architextures_0: 3575869511931301387
+      graphical-multicoloured-print-350-mm-architextures_0: 2512758815427377884
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
