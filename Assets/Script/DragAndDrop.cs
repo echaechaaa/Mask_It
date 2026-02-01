@@ -17,17 +17,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     float currentSize;
     float refvel;
 
-    [Header("Drag Rotation Physics")]
-    public float maxRotation = 18f;
-    public float rotationStrength = 0.004f; // influence de la vitesse
-    public float rotationSmooth = 0.1f;
-
-    private float targetRotation;
-    private float currentRotation;
-    private float rotationVelocity;
-
-    private Vector2 dragVelocity;
-    private bool isDragging;
 
     public UnityEvent OnDrop;
     public UnityEvent OnGrab;
@@ -42,24 +31,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         currentSize = Mathf.SmoothDamp(currentSize, targetSize, ref refvel, smoothDamp);
         transform.localScale = currentSize * Vector3.one;
 
-        // Plus la vitesse est élevée, plus la rotation est réactive
-        float dynamicSmooth = Mathf.Lerp(
-            rotationSmooth * 1.5f,
-            rotationSmooth * 0.3f,
-            Mathf.Clamp01(dragVelocity.magnitude / 2000f)
-        );
-
-        currentRotation = Mathf.SmoothDampAngle(
-            currentRotation,
-            targetRotation,
-            ref rotationVelocity,
-            dynamicSmooth
-        );
-
-        _rectTransform.localRotation = Quaternion.Euler(0f, 0f, currentRotation);
-
-        // Damping naturel de la vitesse
-        dragVelocity = Vector2.Lerp(dragVelocity, Vector2.zero, Time.unscaledDeltaTime * 6f);
+        
     }
     private void Awake()
     {
@@ -69,6 +41,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         initialsize = transform.localScale.x;
         targetSize = initialsize;
         currentSize = initialsize;
+        lastrelease = Time.time;
     }
 
     public void OnPointerDown(PointerEventData eventData) {
@@ -76,8 +49,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     }//Necessary to implement to detect begin drag
     public void OnBeginDrag(PointerEventData eventData)
     {
-        isDragging = true;
-        dragVelocity = Vector2.zero;
 
         transform.SetParent(_canvas.transform);
 
@@ -91,23 +62,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
-
-        // Calcul de la vitesse (pixels / seconde)
-        dragVelocity = eventData.delta / Time.unscaledDeltaTime;
-
-        // Rotation opposée au mouvement horizontal
-        targetRotation = Mathf.Clamp(
-            -dragVelocity.x * rotationStrength,
-            -maxRotation,
-            maxRotation
-        );
+        targetSize = maxSize;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        isDragging = false;
-        targetRotation = 0f;
-
         if (_canvasGroup != null)
         {
             _canvasGroup.blocksRaycasts = true;
@@ -135,6 +94,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
                 transform.SetParent(_lastDroppedArea.transform);
                 GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             }
+            targetSize = initialsize;
+            lastrelease = Time.time;
             OnDrop?.Invoke();
         }
     }
@@ -150,13 +111,17 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         }
         return true; // No children found, drop is allowed
     }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if( Time.time - lastrelease < 0.2f)
+        {
+            return;
+        }
         targetSize = maxSize;
         OnPointerEnter1?.Invoke();
-    }
 
+    }
+    float lastrelease = 0f;
     public void OnPointerExit(PointerEventData eventData)
     {
         targetSize = initialsize;

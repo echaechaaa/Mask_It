@@ -170,7 +170,7 @@ MonoBehaviour:
   maxSize: 180
   smoothDamp: 0.1
   maxRotation: 20
-  rotationStrength: 0.0001
+  rotationStrength: 0.1
   rotationSmooth: 0.3
   OnDrop:
     m_PersistentCalls:
