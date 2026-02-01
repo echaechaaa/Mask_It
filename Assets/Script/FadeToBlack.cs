@@ -14,7 +14,7 @@ public class FadeToBlack : MonoBehaviour
     private bool isFading;
 
     //public static FadeToBlack instance;
-    private void Awake()
+    private void Start()
     {
         /*if(instance == null)
         {
@@ -25,7 +25,7 @@ public class FadeToBlack : MonoBehaviour
         {
             Destroy(gameObject);
         }*/
-
+        _canvasGroup.alpha = 1f;
         StartCoroutine(Fade(1f, 0f));
     }
 
@@ -65,6 +65,8 @@ public class FadeToBlack : MonoBehaviour
         while (t < fadeDuration)
         {
             t += Time.unscaledDeltaTime;
+            Debug.Log(Mathf.Lerp(from, to, t / fadeDuration));
+
             _canvasGroup.alpha = Mathf.Lerp(from, to, t / fadeDuration);
             yield return null;
         }

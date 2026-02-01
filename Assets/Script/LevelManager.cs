@@ -117,13 +117,19 @@ public class LevelManager : MonoBehaviour
         _currentLevelID %= _levelsInOrder.Count;
         InitLevel();
     }*/
-
+    [SerializeField] private FadeToBlack _fade;
     [EasyButtons.Button]
     public void GoToNextLevel()
     {
-
-        _currentLevelID +=1;
+        _fade.OnMiddleFade.AddListener(GoToNextLevelFade);
+        _fade.LaunchFade();
+    }
+    public void GoToNextLevelFade()
+    {
+        _fade.OnMiddleFade.RemoveListener(GoToNextLevelFade);
+        _currentLevelID += 1;
         _currentLevelID %= _levelsInOrder.Count;
+
         InitLevel();
     }
 
