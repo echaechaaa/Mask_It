@@ -17,4 +17,9 @@ public class AudioEvent : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX(soundEffectToPlay); //SFX are oneshot
     }
+
+    public void SetVolumeTo(float value)
+    {
+        AudioManager.Instance.SetVolumeTo(value);
+    }
 }

@@ -92,6 +92,16 @@ public class AudioManager : MonoBehaviour
         }
         _isSFXMuted = !_isSFXMuted;
     }
+
+    public void SetVolumeTo(float value)
+    {
+        if(_isFading)
+        {
+            return;
+        }
+        _sfxVolume = value;
+        _musicVolume = value;
+    }
     #endregion
 
     //Debug method
