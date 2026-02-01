@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
@@ -15,10 +16,50 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private float targetSize;
     float currentSize;
     float refvel;
+
+    [Header("Drag Rotation Physics")]
+    public float maxRotation = 18f;
+    public float rotationStrength = 0.004f; // influence de la vitesse
+    public float rotationSmooth = 0.1f;
+
+    private float targetRotation;
+    private float currentRotation;
+    private float rotationVelocity;
+
+    private Vector2 dragVelocity;
+    private bool isDragging;
+
+    public UnityEvent OnDrop;
+    public UnityEvent OnGrab;
+    public UnityEvent OnPointerEnter1;
+    public UnityEvent OnPointerExit1;
+
+
+
     private void Update()
     {
+        // Scale
         currentSize = Mathf.SmoothDamp(currentSize, targetSize, ref refvel, smoothDamp);
         transform.localScale = currentSize * Vector3.one;
+
+        // Plus la vitesse est élevée, plus la rotation est réactive
+        float dynamicSmooth = Mathf.Lerp(
+            rotationSmooth * 1.5f,
+            rotationSmooth * 0.3f,
+            Mathf.Clamp01(dragVelocity.magnitude / 2000f)
+        );
+
+        currentRotation = Mathf.SmoothDampAngle(
+            currentRotation,
+            targetRotation,
+            ref rotationVelocity,
+            dynamicSmooth
+        );
+
+        _rectTransform.localRotation = Quaternion.Euler(0f, 0f, currentRotation);
+
+        // Damping naturel de la vitesse
+        dragVelocity = Vector2.Lerp(dragVelocity, Vector2.zero, Time.unscaledDeltaTime * 6f);
     }
     private void Awake()
     {
@@ -30,57 +71,71 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         currentSize = initialsize;
     }
 
-    public void OnPointerDown(PointerEventData eventData) { }//Necessary to implement to detect begin drag
+    public void OnPointerDown(PointerEventData eventData) {
+        OnGrab?.Invoke();
+    }//Necessary to implement to detect begin drag
     public void OnBeginDrag(PointerEventData eventData)
     {
-        gameObject.transform.SetParent(_canvas.transform); //Set parent to canvas to be on top of other elements while dragging
+        isDragging = true;
+        dragVelocity = Vector2.zero;
+
+        transform.SetParent(_canvas.transform);
 
         if (_canvasGroup != null)
         {
             _canvasGroup.blocksRaycasts = false;
-            //Do something when dragging here like animation, sound event etc
             _canvasGroup.alpha = 0.6f;
         }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor; //To move correctly with canvas scale according to delta
+        _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+
+        // Calcul de la vitesse (pixels / seconde)
+        dragVelocity = eventData.delta / Time.unscaledDeltaTime;
+
+        // Rotation opposée au mouvement horizontal
+        targetRotation = Mathf.Clamp(
+            -dragVelocity.x * rotationStrength,
+            -maxRotation,
+            maxRotation
+        );
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        isDragging = false;
+        targetRotation = 0f;
+
         if (_canvasGroup != null)
         {
             _canvasGroup.blocksRaycasts = true;
-            //Undo something when stop dragging here
             _canvasGroup.alpha = 1f;
 
             bool isDroppedOnDropArea = false;
+
             foreach (GameObject Go in eventData.hovered)
             {
                 if (Go.TryGetComponent<DropArea>(out DropArea dropArea))
                 {
-                    if (IsDropAllowed() == false) //doesnt work properly yet needs to be called elsewhere
-                    {
+                    if (!IsDropAllowed())
                         break;
-                    }
 
-                    //Set parent to last dropped area if dropped on a drop area
-                    gameObject.transform.SetParent(dropArea.transform);
+                    transform.SetParent(dropArea.transform);
+                    _lastDroppedArea = dropArea;
+                    GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                     isDroppedOnDropArea = true;
                     break;
                 }
             }
-            if (!isDroppedOnDropArea)
+
+            if (!isDroppedOnDropArea && _lastDroppedArea != null)
             {
-                //Return to last dropped area if not dropped on a drop area
-                if (_lastDroppedArea != null)
-                {
-                    transform.SetParent(_lastDroppedArea.transform);
-                    GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                }
+                transform.SetParent(_lastDroppedArea.transform);
+                GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             }
+            OnDrop?.Invoke();
         }
     }
     public bool IsDropAllowed() //To avoid stacking
@@ -99,10 +154,12 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         targetSize = maxSize;
+        OnPointerEnter1?.Invoke();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         targetSize = initialsize;
+        OnPointerExit1?.Invoke();
     }
 }

@@ -169,6 +169,21 @@ MonoBehaviour:
   _lastDroppedArea: {fileID: 0}
   maxSize: 180
   smoothDamp: 0.1
+  maxRotation: 20
+  rotationStrength: 0.0001
+  rotationSmooth: 0.3
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerEnter1:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExit1:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &5797695182444308226
 CanvasGroup:
   m_ObjectHideFlags: 0
