@@ -22,7 +22,7 @@ MonoBehaviour:
   - Card: {fileID: 8626918478367139457, guid: 7066a429028ce604dac1fea8511a2a4d, type: 3}
     startRot: 270
   - Card: {fileID: 8626918478367139457, guid: 04b943d7f636341458702e2fabb8f940, type: 3}
-    startRot: 0
+    startRot: 180
   - Card: {fileID: 8626918478367139457, guid: b9c6bbe7047ce6841b6ae5b7d9ed4af9, type: 3}
     startRot: 90
   solutionShapes:

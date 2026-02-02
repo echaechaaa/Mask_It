@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98efc59202d2b9f4bbc5c696e723b52c, type: 3}
+  m_Name: SO_Level2
+  m_EditorClassIdentifier: 
+  LevelID: 0
+  SideSlotsCount: 2
+  startingInventory:
+  - Card: {fileID: 8626918478367139457, guid: cf0b513bd402c3746a86f9b5b6e2374d, type: 3}
+    startRot: 90
+  - Card: {fileID: 8626918478367139457, guid: f7447a80a9146da43ba9d4c79ffa611f, type: 3}
+    startRot: 270
+  - Card: {fileID: 8626918478367139457, guid: a6dff0d6fb373ce40a838e7c5075993b, type: 3}
+    startRot: 180
+  - Card: {fileID: 8626918478367139457, guid: 01e547fd8997237429a54ce08e2b0b3e, type: 3}
+    startRot: 90
+  solutionShapes:
+  - CardUI: {fileID: 8626918478367139457, guid: f7447a80a9146da43ba9d4c79ffa611f, type: 3}
+    allowedRotation: 00000000
+  - CardUI: {fileID: 8626918478367139457, guid: a6dff0d6fb373ce40a838e7c5075993b, type: 3}
+    allowedRotation: 00000000
+  solutionMasks:
+  - CardUI: {fileID: 8626918478367139457, guid: cf0b513bd402c3746a86f9b5b6e2374d, type: 3}
+    allowedRotation: 00000000
