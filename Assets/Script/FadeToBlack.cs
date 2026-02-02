@@ -75,6 +75,7 @@ public class FadeToBlack : MonoBehaviour
     private IEnumerator FadeInRoutine()
     {
         isFading = true;
+        yield return new WaitForSeconds(1f);
 
         // Fade to black
         yield return StartCoroutine(Fade(0f, 1f));

@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelsInOrder:
-  - {fileID: 11400000, guid: 13f57e41dccc0ad47b17f2a0f956504f, type: 2}
   - {fileID: 11400000, guid: aae780f49fc76014e8cf912e101ee143, type: 2}
+  - {fileID: 11400000, guid: c40ef25b07b8ff54d9ad4f6570256077, type: 2}
+  - {fileID: 11400000, guid: 13f57e41dccc0ad47b17f2a0f956504f, type: 2}
+  - {fileID: 11400000, guid: d8c90b85f5dbc9c43a7cf205bcf63d13, type: 2}
   _canvaTransform: {fileID: 0}
   _shapesLayout: {fileID: 0}
   _masksLayout: {fileID: 0}
@@ -74,3 +76,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _fade: {fileID: 0}

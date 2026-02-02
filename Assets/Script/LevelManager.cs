@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
