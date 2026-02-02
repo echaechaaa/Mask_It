@@ -2182,7 +2182,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 13f57e41dccc0ad47b17f2a0f956504f, type: 2}
     - target: {fileID: 3125402385310699848, guid: e6a87c587c3c9f24f8491faf8a5aa43c, type: 3}
       propertyPath: _levelsInOrder.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3125402385310699848, guid: e6a87c587c3c9f24f8491faf8a5aa43c, type: 3}
       propertyPath: '_levelsInOrder.Array.data[0]'
@@ -2204,6 +2204,10 @@ PrefabInstance:
       propertyPath: '_levelsInOrder.Array.data[4]'
       value: 
       objectReference: {fileID: 11400000, guid: 13f57e41dccc0ad47b17f2a0f956504f, type: 2}
+    - target: {fileID: 3125402385310699848, guid: e6a87c587c3c9f24f8491faf8a5aa43c, type: 3}
+      propertyPath: '_levelsInOrder.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8536f3079a5c89c4a990433654e24d66, type: 2}
     - target: {fileID: 3125402385310699848, guid: e6a87c587c3c9f24f8491faf8a5aa43c, type: 3}
       propertyPath: OnClearLevel.m_PersistentCalls.m_Calls.Array.size
       value: 1
